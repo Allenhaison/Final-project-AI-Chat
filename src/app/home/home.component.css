@@ -1,0 +1,140 @@
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #212121;
+  color: white;
+  overflow: hidden;
+
+}
+
+/* Header */
+.chat-header {
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom:  1px solid #292929;
+  background-color: #212121;
+}
+
+.chat-header h3 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* Scrollable Messages */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+}
+
+/* Message Bubbles */
+.user {
+  align-self: flex-end;
+}
+
+.assistant {
+  align-self: flex-start;
+}
+
+.msg-bubble {
+  max-width: 80%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background-color: #303030;
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.user .msg-bubble {
+  background-color: #303030;
+  color: white;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  padding: 16px;
+  background-color: #212121;
+ 
+  height: 6.8rem;
+  width: 50rem;
+  margin-left: 7rem;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  background-color: #303030;
+  border: 1px solid #292929;
+  border-radius: 19px;
+  color: white;
+  outline: none;
+  font-size: 15px;
+}
+
+.input-area button {
+  margin-left: 12px;
+  padding: 0 20px;
+  background-color: #303030;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #504f4f;
+}
+
+/* Footer note */
+.footer2 {
+  font-size: 12px;
+  text-align: center;
+  color: #a5a5a5;
+  border-bottom: 1px solid #292929;
+  margin-right: 7rem;
+}
+
+/* Scrollbar */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+@media (max-width: 430px) {
+  .chat-area {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .input-area {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+  }
+
+  .messages {
+    padding: 16px;
+    
+  }
+  .input-area{
+    height: 6rem;
+  }
+  .footer2{
+    margin-right: 16px;
+    font-size:8px;
+  }
+  
+}

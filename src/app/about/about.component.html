@@ -1,0 +1,36 @@
+<div class="about">
+  <p>November 30,2022 <span>Product</span></p>
+  <h1>Introducing EchoAI</h1>
+  <button>Try EchoAI</button>
+
+ 
+</div>
+
+<div class="content2">
+    <p>We’ve trained a model called EchoAI which interacts in a <br>conversational way. The dialogue format makes it possible for EchoAI to answer followup questions, admit its mistakes, challenge incorrect premises, and reject inappropriate requests.<br><br>
+EchoAI is a sibling model to InstructGPT⁠, which is trained to follow an instruction in a prompt and provide a detailed response.<br><br>
+
+We are excited to introduce EchoAI to get users’ feedback and learn about its strengths and weaknesses. During the research preview, usage of EchoAI is free. Try it now at echoai.com⁠(opens in a new window).</p>
+</div>
+
+<div class="content3">
+    <h3>Method</h3>
+    <p>
+We trained this model using Reinforcement Learning from Human Feedback (RLHF), using the same methods as InstructGPT⁠, but with slight differences in the data collection setup. We trained an initial model using supervised fine-tuning: human AI trainers provided conversations in which they played both sides—the user and an AI assistant. We gave the trainers access to model-written suggestions to help them compose their responses. We mixed this new dialogue dataset with the InstructGPT dataset, which we transformed into a dialogue format.<br><br>
+To create a reward model for reinforcement learning, we needed to collect comparison data, which consisted of two or more model responses ranked by quality. To collect this data, we took conversations that AI trainers had with the chatbot. We randomly selected a model-written message, sampled several alternative completions, and had AI trainers rank them. Using these reward models, we can fine-tune the model using Proximal Policy Optimization⁠. We performed several iterations of this process</p>
+    <img src="https://images.ctfassets.net/kftzwdyauwt9/6yuK9FKAvoVXNyrsdMoBHH/03ccaf7da203052ba7550965f0021bdf/chatgpt_diagram_dark.png?w=1920&q=80&fm=webp" style="width: 80%; margin-left: 9rem; margin-right: 4rem;" alt="EchoAI Logo ">
+</div>
+
+<p>EchoAI is fine-tuned from a model in the GPT‑3.5 series, which finished training in early 2022. You can learn more about the 3.5 series here⁠(opens in a new window). EchoAI and GPT‑3.5 were trained on an Azure AI supercomputing infrastructure.</p>
+
+<h3>Limitations</h3>
+<p>
+EchoAI sometimes writes plausible-sounding but incorrect or nonsensical answers. Fixing this issue is challenging, as: (1) during RL training, there’s currently no source of truth; (2) training the model to be more cautious causes it to decline questions that it can answer correctly; and (3) supervised training misleads the model because the ideal answer depends on what the model knows⁠(opens in a new window), rather than what the human demonstrator knows.<br><br>
+EchoAI is sensitive to tweaks to the input phrasing or attempting the same prompt multiple times. For example, given one phrasing of a question, the model can claim to not know the answer, but given a slight rephrase, can answer correctly.<br><br>
+The model is often excessively verbose and overuses certain phrases, such as restating that it’s a language model trained by OpenAI. These issues arise from biases in the training data (trainers prefer longer answers that look more comprehensive) and well-known over-optimization issues.1, 2<br><br>
+Ideally, the model would ask clarifying questions when the user provided an ambiguous query. Instead, our current models usually guess what the user intended.<br><br>
+While we’ve made efforts to make the model refuse inappropriate requests, it will sometimes respond to harmful instructions or exhibit biased behavior. We’re using the Moderation API⁠ to warn or block certain types of unsafe content, but we expect it to have some false negatives and positives for now. We’re eager to collect user feedback to aid our ongoing work to improve this system.</p>
+
+<div class="footer">
+    <app-footer></app-footer>
+</div>

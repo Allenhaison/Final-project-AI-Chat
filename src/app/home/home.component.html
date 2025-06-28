@@ -1,0 +1,31 @@
+
+
+ 
+  <div class="chat-area">
+    <div class="chat-header">
+      
+      <h3>Chat with EchoAI</h3>
+    </div>
+
+    <div class="messages" #scrollContainer>
+      <div *ngFor="let msg of chatHistory" [ngClass]="msg.role">
+        <div class="msg-bubble">
+          <strong>{{ msg.role === 'user' ? 'You' : 'EchoAI' }}</strong>
+          <p>{{ msg.content }}</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="input-area" (ngSubmit)="sendMessage()">
+      <input [(ngModel)]="userInput" name="message" required placeholder="Send a message..." />
+      <button type="submit">➤</button>
+    </form>
+    <div class="footer2">
+      <p> ChatGPT can make mistakes. Check important info. See Cookie Preferences.</p>
+      
+    </div>
+  </div>
+  
+
+
+

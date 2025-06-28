@@ -1,0 +1,18 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.content {
+  margin-left: 260px; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #181818;
+  color: white;
+  overflow-y: auto;
+  scrollbar-width: none;
+}   
