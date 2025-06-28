@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ChatService {
 
   private apiUrl = 'https://openrouter.ai/api/v1/chat/completions';
-  private apiKey = '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';
+  private apiKey = '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';
 
   constructor(private http: HttpClient) {}
 
@@ -16,8 +16,8 @@ export class ChatService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json',
-      'HTTP-Referer': 'http://localhost:4200',
-      'X-Title': 'Angular DeepSeek App'
+       'HTTP-Referer': 'https://allenhaison.github.io/Final-project-AI-Chat/',
+      'X-Title': 'Final Project AI Chat'
     });
 
     const body = {
